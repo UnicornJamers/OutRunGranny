@@ -18,9 +18,9 @@ public class AudioManager : MonoBehaviour
     public void RandomizeSfx(params AudioData[] audios)
     {
         int randomIndex = Random.Range(0, audios.Length);
-        float randomPitch = Random.Range(lowPitchRange, highPitchRange);
+        //float randomPitch = Random.Range(lowPitchRange, highPitchRange);
 
-        efxSource.pitch = randomPitch;
+        //efxSource.pitch = randomPitch;
         efxSource.clip = audios[randomIndex].clip;
         efxSource.Play();
     }
