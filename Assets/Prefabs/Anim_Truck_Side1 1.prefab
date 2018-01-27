@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212775590389742086}
   - component: {fileID: 95768507743885408}
   - component: {fileID: 114222726947752252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Anim_Truck_Side1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa75e192a6cd6014fa5b9d6adfee067b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifespan: 2
 --- !u!212 &212775590389742086
 SpriteRenderer:
   m_ObjectHideFlags: 1
