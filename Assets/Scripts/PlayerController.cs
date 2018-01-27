@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public List<AudioData> punchlines;
+    public AudioManager audioMngr;
 
     public GameObject topPlayer;
     public Transform[] topPositions;
@@ -14,7 +16,11 @@ public class PlayerController : MonoBehaviour
 
     public int currentPosition;
     private bool isMoving;
-	private bool isLocked;
+    private bool isLocked;
+    public LayerMask ennemyMask;
+
+    public float minDelayPunchline = 5f;
+    private float timer;
 
     void Start()
     {
@@ -23,14 +29,16 @@ public class PlayerController : MonoBehaviour
         frontPlayer.transform.position = frontPositions[currentPosition].transform.position;
 
         isMoving = false;
-		isLocked = false;
+        isLocked = false;
     }
 
     void Update()
     {
-		if(isLocked) { return; }
+        timer += Time.deltaTime;
 
-		var moveX = 0f;
+        if (isLocked) { return; }
+
+        var moveX = 0f;
         moveX = Input.GetAxis("Horizontal");
 
         if (Mathf.Abs(moveX) > 0.01f)
@@ -52,6 +60,8 @@ public class PlayerController : MonoBehaviour
     {
         var direction = moveX > 0 ? 1 : -1;
 
+        CheckForObstacleOnLane();
+
         if (direction == 1 && currentPosition < topPositions.Length - 1)
         {
             currentPosition++;
@@ -61,6 +71,22 @@ public class PlayerController : MonoBehaviour
             currentPosition--;
         }
         topPlayer.transform.position = topPositions[currentPosition].transform.position;
-		frontPlayer.transform.position = frontPositions[currentPosition].transform.position;
+        frontPlayer.transform.position = frontPositions[currentPosition].transform.position;
+    }
+
+    private void CheckForObstacleOnLane()
+    {
+        if (audioMngr.efxSource.isPlaying || timer < minDelayPunchline) { return; }
+
+        var colliders = Physics2D.OverlapAreaAll(new Vector3(-7.5f, 1, 0), new Vector3(-6, 4.25f, 0), ennemyMask);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].GetComponent<ObstacleController>().lane == currentPosition + 1)
+            {
+                timer = 0;
+                audioMngr.RandomizeSfx(punchlines.ToArray());
+            }
+        }
     }
 }
