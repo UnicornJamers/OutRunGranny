@@ -6,12 +6,31 @@ public class AudioManager : MonoBehaviour
 {
 
     public AudioSource efxSource;
-	public float lowPitchRange = .95f;
-	public float highPitchRange = 1.05f;
+    public AudioSource musicSource;
+    public AudioSource moteurSource;
+
+    public AudioData moteurAudio;
+    public AudioData musicAudio;
+
+    public float lowPitchRange = .95f;
+    public float highPitchRange = 1.05f;
+
+    void Awake()
+    {
+		//musicSource.clip = musicAudio.clip;
+		//musicSource.priority = musicAudio.priority;
+		moteurSource.clip = moteurAudio.clip;
+		moteurSource.priority = moteurAudio.priority;
+		moteurSource.loop = true;
+		moteurSource.volume = 0.3f;
+		moteurSource.Play();
+		//musicSource.Play();
+	}
 
     public void PlaySingle(AudioData audio)
     {
         efxSource.clip = audio.clip;
+        efxSource.priority = audio.priority;
         efxSource.Play();
     }
 
@@ -22,6 +41,14 @@ public class AudioManager : MonoBehaviour
 
         //efxSource.pitch = randomPitch;
         efxSource.clip = audios[randomIndex].clip;
+        efxSource.priority = audios[randomIndex].priority;
         efxSource.Play();
+    }
+
+    public void StopAll()
+    {
+        efxSource.Stop();
+		musicSource.Stop();
+		moteurSource.Stop();
     }
 }
