@@ -13,18 +13,14 @@ public class PlayerController : MonoBehaviour
     public Transform[] frontPositions;
 
     private int currentPosition;
-	private int middlePosition;
     private bool isMoving;
 	private bool isLocked;
 
     void Start()
     {
         currentPosition = Mathf.RoundToInt(topPositions.Length / 2);
-		middlePosition = currentPosition;
         topPlayer.transform.position = topPositions[currentPosition].transform.position;
         frontPlayer.transform.position = frontPositions[currentPosition].transform.position;
-		
-		var index = currentPosition - middlePosition;
 
         isMoving = false;
 		isLocked = false;

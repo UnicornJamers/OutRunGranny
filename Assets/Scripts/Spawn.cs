@@ -62,6 +62,7 @@ public class Spawn : MonoBehaviour
             {
                 var obj = SpawnXAt(objectsToSpawn[randomObjectIndexes[i]], spawnPoints[randomPositionIndexes[i]]);
                 obj.transform.parent = parent;
+				obj.GetComponent<ObstacleController>().lane = randomPositionIndexes[i];
             }
         }
     }

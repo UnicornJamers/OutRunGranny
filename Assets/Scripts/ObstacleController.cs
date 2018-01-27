@@ -6,6 +6,7 @@ public class ObstacleController : MonoBehaviour
 {
 
     public GlobalSpeed speed;
+    public int lane;
 
     void Update()
     {
