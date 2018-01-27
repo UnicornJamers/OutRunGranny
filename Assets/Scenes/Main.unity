@@ -1216,6 +1216,60 @@ Transform:
   m_PrefabParentObject: {fileID: 4186432882522430, guid: 7646356bc8e144c4f93da0de72deb6c3,
     type: 2}
   m_PrefabInternal: {fileID: 305385999}
+--- !u!1 &931786326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 931786327}
+  - component: {fileID: 931786328}
+  m_Layer: 0
+  m_Name: AnimationZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &931786327
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931786326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.44, y: 2.66, z: 0}
+  m_LocalScale: {x: 5.7525005, y: 3.399999, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2116286247}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &931786328
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 931786326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &939256349 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4804430679609026, guid: 7646356bc8e144c4f93da0de72deb6c3,
@@ -1968,8 +2022,8 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 1526815778090768, guid: 44b88161b13821a429c539342fc21cf1, type: 2}
   canSpawn: 1
-  maxTimeBetweenSpawns: 0.8
-  minTimeBetweenSpawns: 0.5
+  maxTimeBetweenSpawns: 0.5
+  minTimeBetweenSpawns: 0.1
   maxRoadSynchroneSpawn: 3
   parent: {fileID: 2116286247}
 --- !u!4 &1664060659 stripped
@@ -2127,7 +2181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {fileID: 11400000, guid: 7872209e24608014e945bc7d676cf00d, type: 2}
-  acceleration: 1
+  acceleration: 0
 --- !u!1 &1710950008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,6 +2633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 70264072}
+  - {fileID: 931786327}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

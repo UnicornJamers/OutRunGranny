@@ -47,7 +47,6 @@ public class Spawn : MonoBehaviour
         if (spawnPoints.Count > 0 && objectsToSpawn.Count > 0)
         {
             int synchroSpawn = indexes[Random.Range(0, indexes.Length)];
-			Debug.Log(synchroSpawn);
             List<int> randomPositionIndexes = new List<int>(synchroSpawn);
             List<int> randomObjectIndexes = new List<int>(synchroSpawn);
 
