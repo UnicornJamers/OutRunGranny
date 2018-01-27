@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject frontPlayer;
     public Transform[] frontPositions;
 
-    private int currentPosition;
+    public int currentPosition;
     private bool isMoving;
 	private bool isLocked;
 

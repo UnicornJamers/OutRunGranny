@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114266446614880078}
   - component: {fileID: 61404933803038924}
   - component: {fileID: 50170740698919206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RedCar
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {fileID: 11400000, guid: 7872209e24608014e945bc7d676cf00d, type: 2}
+  lane: 0
 --- !u!212 &212598356666484234
 SpriteRenderer:
   m_ObjectHideFlags: 1

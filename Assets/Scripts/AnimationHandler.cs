@@ -43,4 +43,5 @@ public class AnimationHandler : MonoBehaviour {
 			obj.transform.localScale = Vector3.one;
 		}		
 	}
+
 }
