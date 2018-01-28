@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Allez allez allez
   m_EditorClassIdentifier: 
   clip: {fileID: 0}
-  priority: 0
+  priority: 1

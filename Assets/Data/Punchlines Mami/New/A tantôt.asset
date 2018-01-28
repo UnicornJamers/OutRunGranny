@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491d9aae01308d045892946f303d3b19, type: 3}
   m_Name: "A tant\xF4t"
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  priority: 0
+  clip: {fileID: 8300000, guid: 89b312bcbfa256c4d99cc8eba88975b0, type: 3}
+  priority: 1

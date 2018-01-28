@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491d9aae01308d045892946f303d3b19, type: 3}
   m_Name: C'est parti mon kiki
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  priority: 0
+  clip: {fileID: 8300000, guid: 80169c7d4aae12d47a098635118c11e9, type: 3}
+  priority: 1
