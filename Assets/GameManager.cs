@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject GameOverPrefabJOUEUR;
 
 	public GrannyScreenDisplayer grannyScreen;
-	public GameObject ScorePanel;
+	public Text currentScoreText;
 	public Text finalScoreText;
 
 	public PlayerDeath death;
@@ -20,10 +20,6 @@ public class GameManager : MonoBehaviour {
 	public float scoreMult = 5f;
 	float finalScore = 0f;
 	public int numberOfCloseCalls = 0;
-
-	// Use this for initialization
-	void Start () {
-	}
 	
 	private void Awake() {
 		SetGameOverCanvasState(false);
@@ -37,8 +33,10 @@ public class GameManager : MonoBehaviour {
 			SetGameOverCanvasState(true);
 			finalScore = currentScore + numberOfCloseCalls * 100f;
 			finalScoreText.text = "Score : " + finalScore.ToString("0000#");
+			currentScoreText.text = "";
 		}else{
 			currentScore += Time.deltaTime * scoreMult * currentSpeedLevel;
+			currentScoreText.text = "Score : " + currentScore.ToString("0000#");
 		}
 	}
 
