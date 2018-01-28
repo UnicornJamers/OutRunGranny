@@ -16,6 +16,6 @@ public class groundTextureOffset : MonoBehaviour {
 
 	void Update () {
 		offset += Time.deltaTime * speed;
-		r.material.SetTextureOffset("_MainTex", new Vector2 (0, offset));
+		r.material.SetTextureOffset("_MainTex", new Vector2 (-offset, 0));
 	}
 }

@@ -3,46 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GrannyScreenDisplayer : MonoBehaviour {
-	public GameObject grannyPanel;
-	public List<Sprite> speedLevelsImages;
-	Animator animator;
+public class GrannyScreenDisplayer : MonoBehaviour
+{
+    public GameObject grannyPanel;
+    public List<Sprite> speedLevelsImages;
+    Animator animator;
+    public GameManager gameManager;
 
-	private void Start() {
-		animator = grannyPanel.GetComponent<Animator>();
-	}
 
-	private void Update() {
-		if(IsAnimatorPlaying()){
-			TriggerAnimation(false);
-		}
-	}
+    private void Awake()
+    {
+        animator = grannyPanel.GetComponent<Animator>();
+    }
 
-	public void TriggerAnimation(bool b){
-			animator.SetBool("AnimIsActive", b);
-	}
+    public void TriggerAnimation(bool b)
+    {
+        animator.SetBool("AnimIsActive", b);
+    }
 
-	private bool IsAnimatorPlaying(){
-		bool b = animator.GetCurrentAnimatorStateInfo(0).IsName("GrannyScreenAnimation");
-		//Debug.Log(b);
-		return b;
-	}
+    private bool IsAnimatorPlaying()
+    {
+        bool b = animator.GetCurrentAnimatorStateInfo(0).IsName("GrannyScreenAnimation");
+        return b;
+    }
 
-	public void SetSourceImage(int currentSpeedLevel){
-		if(speedLevelsImages[currentSpeedLevel-1] != null){
-			grannyPanel.GetComponent<Image>().sprite = speedLevelsImages[currentSpeedLevel-1];
-		}else{
-			return;
-		}
-	}
+    public void SetSourceImage(int currentSpeedLevel)
+    {
+        if (speedLevelsImages[currentSpeedLevel - 1] != null)
+        {
+            grannyPanel.GetComponent<Image>().sprite = speedLevelsImages[currentSpeedLevel - 1];
+        }
+        else
+        {
+            return;
+        }
+    }
 
-	private IEnumerator Pause(){
-		Time.timeScale = .1f;
-		float pauseEndTime = Time.realtimeSinceStartup + 3;
+    private IEnumerator Pause()
+    {
+        Time.timeScale = .1f;
+        float pauseEndTime = Time.realtimeSinceStartup + 3;
 
-		while(Time.realtimeSinceStartup < pauseEndTime){
-			yield return 0;
-		}
-		Time.timeScale = 1f;
+        while (Time.realtimeSinceStartup < pauseEndTime)
+        {
+            yield return 0;
+        }
+        Time.timeScale = 1f;
+    }
+
+    public void StartNewLevel() {
+        TriggerAnimation(false);
+        gameManager.StartNewLevel();
 	}
 }

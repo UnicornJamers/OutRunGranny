@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour
         {
             isMoving = false;
         }
-
     }
 
     private void Move(float moveX)
@@ -96,8 +95,8 @@ public class PlayerController : MonoBehaviour
     {
         if (audioMngr.efxSource.isPlaying || timerPunchline < minDelayPunchline) { return; }
 
-        var colliders = Physics2D.OverlapAreaAll(new Vector3(-7.5f, 1, 0), new Vector3(-6, 4.25f, 0), ennemyMask);
-
+        var colliders = Physics2D.OverlapAreaAll(new Vector3(-7.3f, 5, 0), new Vector3(-3.85f, 0.75f, 0), ennemyMask);
+        
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].GetComponent<ObstacleController>().lane == currentPosition)

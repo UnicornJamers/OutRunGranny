@@ -6,6 +6,8 @@ public class Spawn : MonoBehaviour
 {
     public List<Transform> spawnPoints;
     public List<GameObject> objectsToSpawn;
+    public List<Sprite> carSprites;
+    public List<Sprite> truckSprites;
     float spawnRate;
     public bool canSpawn = false;
     public float maxTimeBetweenSpawns = 5f;
@@ -50,21 +52,26 @@ public class Spawn : MonoBehaviour
             List<int> randomPositionIndexes = new List<int>(synchroSpawn);
             List<int> randomObjectIndexes = new List<int>(synchroSpawn);
 
+            var typeRand = Random.value;
+
             for (int i = 0; i < synchroSpawn; i++)
             {
                 var pos = Random.Range(0, spawnPoints.Count);
 				randomPositionIndexes.Add(pos);
-				var obj = Random.Range(0, objectsToSpawn.Count);
-				randomObjectIndexes.Add(obj);
+				var idx = typeRand > 0.5f ? 0 : 1;
+				randomObjectIndexes.Add(idx);
             }
 
             for (int i = 0; i < synchroSpawn; i++)
             {
                 var obj = SpawnXAt(objectsToSpawn[randomObjectIndexes[i]], spawnPoints[randomPositionIndexes[i]]);
                 obj.transform.parent = parent;
-				obj.GetComponent<ObstacleController>().lane = randomPositionIndexes[i];
-                var typeRand = Random.value;
-                obj.GetComponent<ObstacleController>().type = typeRand > 0.5f ? VehicleType.Car : VehicleType.Truck;
+                var obstaclCtrl = obj.GetComponent<ObstacleController>();
+				obstaclCtrl.lane = randomPositionIndexes[i];
+                obstaclCtrl.type = typeRand > 0.5f ? VehicleType.Car : VehicleType.Truck;
+                var objRenderer = obj.GetComponent<SpriteRenderer>();
+                objRenderer.flipX = true;
+                objRenderer.sprite = typeRand > 0.5f ? carSprites[Random.Range(0, carSprites.Count)] : truckSprites[Random.Range(0, truckSprites.Count)];
             }
         }
     }
