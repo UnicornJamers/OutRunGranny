@@ -38,7 +38,7 @@ public class FadeManager : MonoBehaviour
         else
         {
             transition += Time.deltaTime * (1 / durationIn);
-            //overlayImage.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, transition);
+            overlayImage.color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, transition);
 			overlayImage.color = Color.white;
 			if (transition > 1)
             {

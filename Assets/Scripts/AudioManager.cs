@@ -17,14 +17,16 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-		//musicSource.clip = musicAudio.clip;
-		//musicSource.priority = musicAudio.priority;
+		musicSource.clip = musicAudio.clip;
+		musicSource.priority = musicAudio.priority;
 		moteurSource.clip = moteurAudio.clip;
 		moteurSource.priority = moteurAudio.priority;
 		moteurSource.loop = true;
 		moteurSource.volume = 0.3f;
+        musicSource.loop = true;
+        musicSource.volume = 0.3f;
 		moteurSource.Play();
-		//musicSource.Play();
+		musicSource.Play();
 	}
 
     public void PlaySingle(AudioData audio)

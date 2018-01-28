@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GrannyScreenDisplayer : MonoBehaviour {
 	public GameObject grannyPanel;
+	public List<Sprite> speedLevelsImages;
 	Animator animator;
 
 	private void Start() {
@@ -12,11 +13,6 @@ public class GrannyScreenDisplayer : MonoBehaviour {
 	}
 
 	private void Update() {
-
-		if(Input.GetKey(KeyCode.Space)){
-			TriggerAnimation(true);
-			StartCoroutine("Pause");
-		}
 		if(IsAnimatorPlaying()){
 			TriggerAnimation(false);
 		}
@@ -30,6 +26,14 @@ public class GrannyScreenDisplayer : MonoBehaviour {
 		bool b = animator.GetCurrentAnimatorStateInfo(0).IsName("GrannyScreenAnimation");
 		//Debug.Log(b);
 		return b;
+	}
+
+	public void SetSourceImage(int currentSpeedLevel){
+		if(speedLevelsImages[currentSpeedLevel-1] != null){
+			grannyPanel.GetComponent<Image>().sprite = speedLevelsImages[currentSpeedLevel-1];
+		}else{
+			return;
+		}
 	}
 
 	private IEnumerator Pause(){

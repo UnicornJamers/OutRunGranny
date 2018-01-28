@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212996452224220306}
   - component: {fileID: 95646691478020908}
   - component: {fileID: 114969696425203678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Anim_Car_Side2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

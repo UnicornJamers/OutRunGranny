@@ -6,6 +6,7 @@ public class PlayerTopController : MonoBehaviour
 {
 
 	public PlayerController controller;
+	public PlayerDeath death;
 	public LayerMask ennemyMask;
 	public List<AudioData> punchlines;
 	public AudioData explosion;	
@@ -26,7 +27,7 @@ public class PlayerTopController : MonoBehaviour
 		var random = Random.value;
 		random += 0.1f * colliders.Length;
 
-		if(random > 0.6f) {
+		if(random > 0.6f && !death.isDead) {
 			audioMngr.RandomizeSfx(punchlines.ToArray());
 		}
     }
@@ -34,10 +35,12 @@ public class PlayerTopController : MonoBehaviour
     void OnCollisionEnter2D (Collision2D other)
     {
         if (other.transform.tag == "Obstacle")
-
         {
-			audioMngr.StopAll();
-			audioMngr.PlaySingle(explosion);
+			if(!death.isDead){
+				audioMngr.StopAll();
+				audioMngr.PlaySingle(explosion);
+				death.Die();
+			}
         }
     }
 }
