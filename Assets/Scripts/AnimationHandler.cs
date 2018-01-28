@@ -5,6 +5,8 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour {
 
 	public Transform parent;
+	public List<AudioData> TruckKlaxon;
+	public List<AudioData> CarKlaxon;
 	public List<GameObject> obstaclesAnimLane1;
 	public List<GameObject> obstaclesAnimLane2;
 	public List<GameObject> obstaclesAnimLane3;
@@ -43,5 +45,4 @@ public class AnimationHandler : MonoBehaviour {
 			obj.transform.localScale = Vector3.one;
 		}		
 	}
-
 }

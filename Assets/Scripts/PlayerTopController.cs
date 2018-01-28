@@ -6,6 +6,7 @@ public class PlayerTopController : MonoBehaviour
 {
 
 	public PlayerController controller;
+	public PlayerDeath death;
 	public LayerMask ennemyMask;
 	public List<AudioData> punchlines;
 	public AudioData explosion;	
@@ -34,10 +35,10 @@ public class PlayerTopController : MonoBehaviour
     void OnCollisionEnter2D (Collision2D other)
     {
         if (other.transform.tag == "Obstacle")
-
         {
 			audioMngr.StopAll();
 			audioMngr.PlaySingle(explosion);
+			death.Die();
         }
     }
 }

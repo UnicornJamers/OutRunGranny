@@ -566,6 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2069657368}
+  death: {fileID: 1294033759}
   ennemyMask:
     serializedVersion: 2
     m_Bits: 512
@@ -575,7 +576,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8bc7428a21d7b2d4c9de329cd7961771, type: 2}
   - {fileID: 11400000, guid: d4f4110f1c298f047b7690a3fe24fc07, type: 2}
   - {fileID: 11400000, guid: 9676af81395bbb14e84e3c230dce3b2b, type: 2}
-  explosion: {fileID: 11400000, guid: bb652a96b091e584fbfe0c6bb80644dc, type: 2}
+  explosion: {fileID: 11400000, guid: 4823289a1b4eaf147a672ff6ef95b004, type: 2}
   audioMngr: {fileID: 527060634}
   minDelayPunchline: 5
 --- !u!1001 &305385999
@@ -853,7 +854,7 @@ GameObject:
   - component: {fileID: 513891466}
   - component: {fileID: 513891465}
   - component: {fileID: 513891464}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: FadeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1063,7 @@ MonoBehaviour:
   musicSource: {fileID: 527060636}
   moteurSource: {fileID: 527060637}
   moteurAudio: {fileID: 11400000, guid: 2db13f031400fe443831370869de11ea, type: 2}
-  musicAudio: {fileID: 0}
+  musicAudio: {fileID: 11400000, guid: af1701275a41bf94f8a5d401088ca39d, type: 2}
   lowPitchRange: 0.95
   highPitchRange: 1.05
 --- !u!4 &527060635
@@ -1566,6 +1567,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 918034931}
+  TruckKlaxon: []
+  CarKlaxon: []
   obstaclesAnimLane1:
   - {fileID: 1624844379447722, guid: 3a06d35303df47a4bbedb0f8b6c8afdb, type: 2}
   - {fileID: 1348769796203734, guid: 4ded8392227d19d42b416f79a57b6b33, type: 2}
@@ -1867,6 +1870,7 @@ GameObject:
   - component: {fileID: 1294033754}
   - component: {fileID: 1294033756}
   - component: {fileID: 1294033757}
+  - component: {fileID: 1294033759}
   m_Layer: 8
   m_Name: PlayerFront
   m_TagString: Player
@@ -1976,6 +1980,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1294033759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294033753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6496d9ac1718c4a92a54209e298649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1420109509169784, guid: fcfb4c6fc566f024c84117d00c93e78a, type: 2}
+  myRenderer: {fileID: 0}
 --- !u!1 &1295601702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2581,7 @@ GameObject:
   - component: {fileID: 1866506049}
   - component: {fileID: 1866506051}
   - component: {fileID: 1866506050}
-  m_Layer: 8
+  m_Layer: 5
   m_Name: FadeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2748,6 +2765,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 75b3cdfe45537bb478b65a231c203c1e, type: 2}
   - {fileID: 11400000, guid: 9c8e86c4bde400e44820ebaa9ecc3790, type: 2}
   - {fileID: 11400000, guid: 07b8ad53e06167a4dacf4a8e1fbe362c, type: 2}
+  drifts:
+  - {fileID: 11400000, guid: 81afc43a89930be4db42ea8ba3e22c98, type: 2}
+  - {fileID: 11400000, guid: 9caaafb6df806fc4ca5a97cfa7de669c, type: 2}
+  - {fileID: 11400000, guid: 7aa0df18e0e71404baedbafe0709126d, type: 2}
+  - {fileID: 11400000, guid: 6518427bd9b446a4b8031cfa9732a179, type: 2}
+  - {fileID: 11400000, guid: dfa76d3e44254ab48ab506ac031d6259, type: 2}
   audioMngr: {fileID: 527060634}
   topPlayer: {fileID: 1295601702}
   topPositions:
