@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491d9aae01308d045892946f303d3b19, type: 3}
   m_Name: Klaxon voiture 2
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  priority: 0
+  clip: {fileID: 8300000, guid: 622be9e8b5b8b334b9d4b323c3144e30, type: 3}
+  priority: 2
