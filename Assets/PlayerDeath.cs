@@ -18,8 +18,9 @@ public class PlayerDeath : MonoBehaviour {
     {
 		if(!isDead){
 			myRenderer.sprite = null;
-			Instantiate (explosion, transform.position, transform.rotation);
+			GameObject KBoom = Instantiate (explosion, transform.position, transform.rotation);
 			isDead = true;
+			Destroy(KBoom, 1f);
 		}
     }
 }

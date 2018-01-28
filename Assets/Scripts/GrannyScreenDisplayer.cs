@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GrannyScreenDisplayer : MonoBehaviour {
 	public GameObject grannyPanel;
+	public List<Sprite> speedLevelsImages;
 	Animator animator;
 
 	private void Start() {
