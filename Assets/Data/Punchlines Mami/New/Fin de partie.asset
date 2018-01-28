@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 491d9aae01308d045892946f303d3b19, type: 3}
-  m_Name: Moteur
+  m_Name: Fin de partie
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 5a4e827169e2f8c4ca856f8faad8eb6e, type: 3}
-  priority: 250
+  clip: {fileID: 8300000, guid: 947d0dc43ec6076469c14dd589b90c6e, type: 3}
+  priority: 1

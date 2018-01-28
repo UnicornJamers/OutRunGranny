@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1526815778090768}
   m_IsPrefabParent: 1
+--- !u!1 &1250085854271446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4543649853971472}
+  - component: {fileID: 96933345043297524}
+  m_Layer: 0
+  m_Name: TrailRenderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1526815778090768
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,28 +46,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1572951591714144
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4287140235359358}
-  - component: {fileID: 96722392272952960}
-  m_Layer: 0
-  m_Name: TrailRenderer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4287140235359358
+--- !u!4 &4543649853971472
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1572951591714144}
+  m_GameObject: {fileID: 1250085854271446}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -66,10 +66,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526815778090768}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 6.85, y: 1.95, z: 0}
+  m_LocalPosition: {x: 8.13, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children:
-  - {fileID: 4287140235359358}
+  - {fileID: 4543649853971472}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -118,13 +118,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.4, y: 6.4}
   m_EdgeRadius: 0
---- !u!96 &96722392272952960
+--- !u!96 &96933345043297524
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1572951591714144}
+  m_GameObject: {fileID: 1250085854271446}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -231,6 +231,21 @@ MonoBehaviour:
   speed: {fileID: 11400000, guid: 7872209e24608014e945bc7d676cf00d, type: 2}
   lane: 0
   type: 
+  carKlaxon:
+  - {fileID: 11400000, guid: 95c19cd421b878847835e649f29db7ea, type: 2}
+  - {fileID: 11400000, guid: d2e8770548bb68e4398109bebe4013d0, type: 2}
+  - {fileID: 11400000, guid: 598d5bd26576acc49bfb35289d2288bb, type: 2}
+  - {fileID: 11400000, guid: 7c90230a55839514e8e0a48bbafb0dcb, type: 2}
+  - {fileID: 11400000, guid: fb0f4bbba8225234c8f9d513f4ca1f92, type: 2}
+  - {fileID: 11400000, guid: 57b80ef815aeb3148aa58f9151a847db, type: 2}
+  truckKlaxon:
+  - {fileID: 11400000, guid: 0b723a421b71af947806c52c6dcbab04, type: 2}
+  - {fileID: 11400000, guid: 15ca2b62f8595c144a5fef42ec05e2a4, type: 2}
+  - {fileID: 11400000, guid: 940d540984451c845946621c64367cb0, type: 2}
+  - {fileID: 11400000, guid: 81db45d7627c0534f951c05160a34d9e, type: 2}
+  - {fileID: 11400000, guid: badbee6ef8d255b4890c7c7c95e05ff2, type: 2}
+  audioMngr: {fileID: 0}
+  timerDelay: 1.5
 --- !u!212 &212598356666484234
 SpriteRenderer:
   m_ObjectHideFlags: 1

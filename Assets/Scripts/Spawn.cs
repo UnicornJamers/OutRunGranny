@@ -62,8 +62,9 @@ public class Spawn : MonoBehaviour
             {
                 var obj = SpawnXAt(objectsToSpawn[randomObjectIndexes[i]], spawnPoints[randomPositionIndexes[i]]);
                 obj.transform.parent = parent;
-				obj.GetComponent<ObstacleController>().lane = randomPositionIndexes[i]+1;
-                //obj.GetComponent<ObstacleController>().type = ;
+				obj.GetComponent<ObstacleController>().lane = randomPositionIndexes[i];
+                var typeRand = Random.value;
+                obj.GetComponent<ObstacleController>().type = typeRand > 0.5f ? VehicleType.Car : VehicleType.Truck;
             }
         }
     }

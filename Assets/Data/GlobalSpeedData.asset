@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02a9f7075310a649800f5221c0887c8, type: 3}
   m_Name: GlobalSpeedData
   m_EditorClassIdentifier: 
-  minimalSpeed: 10
+  minimalSpeed: 30
