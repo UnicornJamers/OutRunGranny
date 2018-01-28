@@ -12,9 +12,13 @@ public class ChangeSprite : MonoBehaviour
 	{
 		if(other.tag == "Player") {
 
-			var renderObj = other.GetComponent<SpriteRenderer>();
-			renderObj.flipX = flipIt;
-			renderObj.sprite = sprite;
+			if(other.GetComponent<PlayerDeath>().isDead){
+				other.GetComponent<SpriteRenderer>().sprite = null;
+			}else{
+				var renderObj = other.GetComponent<SpriteRenderer>();
+				renderObj.flipX = flipIt;
+				renderObj.sprite = sprite;
+			}
 		}		
 	}
 }

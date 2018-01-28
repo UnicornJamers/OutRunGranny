@@ -7,14 +7,19 @@ public class PlayerDeath : MonoBehaviour {
 
 	public GameObject explosion;
 	public SpriteRenderer myRenderer;
+	public bool isDead;
 
 	void Start() {
+		isDead = false;
 		myRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	public void Die()
     {
-		myRenderer.sprite = null;
-		Instantiate (explosion, transform.position, transform.rotation);
+		if(!isDead){
+			myRenderer.sprite = null;
+			Instantiate (explosion, transform.position, transform.rotation);
+			isDead = true;
+		}
     }
 }
