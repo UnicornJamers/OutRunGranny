@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
 		moteurSource.loop = true;
 		moteurSource.volume = 0.3f;
 		moteurSource.Play();
+        musicSource.loop = true;
 		musicSource.Play();
 	}
 

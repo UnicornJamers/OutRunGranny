@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].GetComponent<ObstacleController>().lane == currentPosition + 1)
+            if (colliders[i].GetComponent<ObstacleController>().lane == currentPosition)
             {
                 timerPunchline = 0;
                 audioMngr.RandomizeSfx(punchlines.ToArray());
