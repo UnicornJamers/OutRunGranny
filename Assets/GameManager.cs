@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
 		if(death.isDead){
 			SetGameOverCanvasState(true);
 			finalScore = currentScore + numberOfCloseCalls * 100f;
-			finalScoreText.text = "Score : " + finalScore.ToString();
+			finalScoreText.text = "Score : " + finalScore.ToString("000000#");
 		}else{
 			currentScore += Time.deltaTime * scoreMult * currentSpeedLevel;
 		}
