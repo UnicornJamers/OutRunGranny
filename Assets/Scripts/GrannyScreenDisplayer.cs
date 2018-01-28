@@ -13,13 +13,13 @@ public class GrannyScreenDisplayer : MonoBehaviour {
 
 	private void Update() {
 
-		if(Input.GetKey(KeyCode.Space)){
+		/*if(Input.GetKey(KeyCode.Space)){
 			TriggerAnimation(true);
 			StartCoroutine("Pause");
 		}
 		if(IsAnimatorPlaying()){
 			TriggerAnimation(false);
-		}
+		}*/
 	}
 
 	public void TriggerAnimation(bool b){
