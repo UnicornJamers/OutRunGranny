@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
 	public PlayerDeath death;
 	public int currentSpeedLevel;
+	public int maxSpeedLevel = 4;
 
 	public float currentScore = 0f;
 	public float scoreMult = 5f;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour {
 	private void Awake() {
 		SetGameOverCanvasState(false);
 		currentScore = 0f;
-		currentSpeedLevel = 1;
+		currentSpeedLevel = 0;
 	}
 
 	// Update is called once per frame
@@ -38,14 +39,24 @@ public class GameManager : MonoBehaviour {
 			currentScore += Time.deltaTime * scoreMult * currentSpeedLevel;
 			currentScoreText.text = "Score : " + currentScore.ToString("0000#");
 		}
+
+		//Testeur
+		if(Input.GetKeyDown(KeyCode.Space)){
+			ChangeSpeedLevel(1);
+		}
 	}
 
 	void ChangeSpeedLevel(int amount){
 		currentSpeedLevel += amount;
+		if(currentSpeedLevel >= maxSpeedLevel){
+			currentSpeedLevel -= amount;
+		}else{
+			grannyScreen.SetSourceImage(currentSpeedLevel);
+			grannyScreen.TriggerAnimation(true);
+		}
 	}
 
 	public void Quit(){
-		Debug.Log("QUIT");
 		#if UNITY_EDITOR
 		UnityEditor.EditorApplication.isPlaying = false;
 		#endif
