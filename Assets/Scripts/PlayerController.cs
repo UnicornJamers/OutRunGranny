@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private float timerPunchline = 0f;
     private float timerDrifts = 0f;
 
+    public PlayerDeath death;
+
     void Start()
     {
         currentPosition = Mathf.RoundToInt(topPositions.Length / 2);
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
         timerPunchline += Time.deltaTime;
         timerDrifts += Time.deltaTime;
 
-        if (isLocked) { return; }
+        if (isLocked || death.isDead) { return; }
 
         var moveX = 0f;
         moveX = Input.GetAxis("Horizontal");

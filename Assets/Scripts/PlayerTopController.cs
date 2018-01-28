@@ -27,7 +27,7 @@ public class PlayerTopController : MonoBehaviour
 		var random = Random.value;
 		random += 0.1f * colliders.Length;
 
-		if(random > 0.6f) {
+		if(random > 0.6f && !death.isDead) {
 			audioMngr.RandomizeSfx(punchlines.ToArray());
 		}
     }
@@ -36,9 +36,11 @@ public class PlayerTopController : MonoBehaviour
     {
         if (other.transform.tag == "Obstacle")
         {
-			audioMngr.StopAll();
-			audioMngr.PlaySingle(explosion);
-			death.Die();
+			if(!death.isDead){
+				audioMngr.StopAll();
+				audioMngr.PlaySingle(explosion);
+				death.Die();
+			}
         }
     }
 }
